@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="http://localhost:4000/dirigible/2021/11/02/material-blogging-capabilities.html" /><!-- Title, description, author --><title>Enable Blogging Capabilities with Material for MkDocs | Grow as Tech Writer Blog - A blog for tech writers growing from Eastern Europe.</title>
+  <meta name="description" content="This is my blog about all things tech writing." />
+  <meta name="author" content="Svetoslav Pandeliev" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Enable Blogging Capabilities with Material for MkDocs | Grow as Tech Writer Blog - A blog for tech writers growing from Eastern Europe." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://localhost:4000/assets/images/avatar.png" />
+  <meta property="og:url" content="http://localhost:4000/dirigible/2021/11/02/material-blogging-capabilities.html" />
+  <meta property="og:site_name" content="Grow as Tech Writer Blog" />
+  <meta property="og:description" content="This is my blog about all things tech writing." />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/assets/js/skel.min.js" defer></script>
+  <script src="/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/assets/js/main.js" defer></script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Nav -->
+<nav id="nav">
+  <ul><li><a href="http://localhost:4000/" id="grow-as-tech-writer-blog-link">
+            <span class="icon fa-blog">Grow As Tech Writer Blog</span>
+          </a></li></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="https://twitter.com/slavipande" class="icon-b fa-x-twitter"><span class="label">Twitter</span></a></li><li><a href="https://www.linkedin.com/in/svetoslav-pandeliev/" class="icon-b fa-linkedin-in"><span class="label">LinkedIn</span></a></li><li><a href="https://github.com/slavipande" class="icon-b fa-github"><span class="label">GitHub</span></a></li><li><a href="mailto:slavipande@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+	<!-- Post -->
+	<article class="shade-two">
+	  <div class="container">
+			<header>
+				<h2>Enable Blogging Capabilities with Material for MkDocs</h2>
+				<p>02 November 2021</p>
+			</header><p>In this blog, we’re going to discuss how to add blogging capabilities to <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>. Here’s what we refer to as blogging capabilities:</p>
+
+<ul>
+  <li>author’s GitHub avatar, name, and link to GitHub profile</li>
+  <li>a calendar icon with a publishing date next to it</li>
+  <li>a clock icon with a value for time to read next to it</li>
+</ul>
+
+<p>You can also see the above mentioned capabilities under the title of this blog.</p>
+
+<p>In particular, we’ll look at:</p>
+
+<ul>
+  <li>What kind of metadata key-value pairs you need to define in your <code class="language-plaintext highlighter-rouge">.md</code> file and how.</li>
+  <li>How to override a specific block in the <code class="language-plaintext highlighter-rouge">main.html</code> file that <a href="https://www.mkdocs.org/">MkDocs</a> uses as a template when building the HTML output from your <code class="language-plaintext highlighter-rouge">.md</code> source, so that the metadata values provided in your <code class="language-plaintext highlighter-rouge">.md</code> file are reflected in the HTML output.</li>
+</ul>
+
+<p>As a result, a blog author will just have to provide sufficient metadata in the frontmatter of their <code class="language-plaintext highlighter-rouge">.md</code> file and data about author, publishing date, and reading time will be displayed as part of their blog. Cool, right?</p>
+
+<blockquote>
+  <p>This can also be done manually by including a piece of HTML code in each <code class="language-plaintext highlighter-rouge">.md</code> file but we wanted to have everything set up for blog authors in a way that they can focus on the writing itself.</p>
+</blockquote>
+
+<h3 id="adding-metadata-to-your-blog">Adding Metadata to Your Blog</h3>
+
+<p>Metadata about an <code class="language-plaintext highlighter-rouge">.md</code> file (also called frontmatter) is declared within a specific block in the beginning of the <code class="language-plaintext highlighter-rouge">.md</code> file itself and is denoted by the triple dashes at the start and end of the block. Usually, the metadata is not processed when generating HTML output from the <code class="language-plaintext highlighter-rouge">.md</code> file. With MkDocs, metadata can be displayed on the page or used to control the page rendering, but only if this is supported by the theme you’re using with MkDocs. For more details, checkout the <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data">MkDocs documentation</a>.</p>
+
+<p>We have to determine what metadata key-value pairs are needed for the blogging capabilities. As mentioned above, we want to have name, GitHub avatar, and link to GitHub profile of the author, as well as publishing date and reading time.</p>
+
+<p>Open your <code class="language-plaintext highlighter-rouge">.md</code> file and add the following lines:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">&lt;Your Name&gt;</span>
+<span class="na">author_gh_user</span><span class="pi">:</span> <span class="s">&lt;Your GitHub User&gt;</span>
+<span class="na">read_time</span><span class="pi">:</span> <span class="s">&lt;Reading Time&gt;</span>
+<span class="na">publish_date</span><span class="pi">:</span> <span class="s">&lt;Date of Publishing&gt;</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+<p>It’s quite self-explanatory which metadata key-value pairs are responsible for which of the blogging capabilities. You can find more details in step 5 of <a href="#overriding-the-content-block">Overriding the Content Block</a>. The more interesting one is <code class="language-plaintext highlighter-rouge">author_gh_user</code>. This value will be used for both getting the author’s GitHub avatar and creating a hyperlink to their GitHub profile.</p>
+
+<blockquote>
+  <p>Setting the title in the metadata will help position the blogging capabilities in the right place - under the title and before the rest of your blog.</p>
+</blockquote>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">title: &lt;Your Blog Title&gt;</code></p>
+</blockquote>
+
+<blockquote>
+  <p>When the title is set in the metadata, use <code class="language-plaintext highlighter-rouge">Heading 2</code> level (<code class="language-plaintext highlighter-rouge">## This is a heading 2</code>) as the highest heading level in your blog. Otherwise, the first <code class="language-plaintext highlighter-rouge">Heading 1</code> you use will overwrite the title from the frontmatter and cause formatting issues.</p>
+</blockquote>
+
+</div>
+	</article>
+</div><!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy; 2023 Svetoslav Pandeliev</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://github.com/chrisbobbe">Chris Bobbe</a></li>
+    <li>Photo by <a href="https://unsplash.com/@fantasyflip?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Philipp Katzenberger</a> on <a href="https://unsplash.com/s/photos/tech?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+    <li>Illustrations by <a href="https://undraw.co/">unDraw</a></li>
+  
+  </ul>
+  
+</div></body>
+</html>
