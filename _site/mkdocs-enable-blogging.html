@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="http://localhost:4000/mkdocs-enable-blogging.html" /><!-- Title, description, author --><title>Enable Blogging in MkDocs | Svetoslav Pandeliev - Tech Writer</title>
+  <meta name="description" content="This is my portfolio. It is built based on a Jekyll theme version of HTML5 UP&#39;s sleek, responsive site template Prologue." />
+  <meta name="author" content="Svetoslav Pandeliev" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Enable Blogging in MkDocs | Svetoslav Pandeliev - Tech Writer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://localhost:4000/assets/images/avatar.png" />
+  <meta property="og:url" content="http://localhost:4000/mkdocs-enable-blogging.html" />
+  <meta property="og:site_name" content="Svetoslav Pandeliev" />
+  <meta property="og:description" content="This is my portfolio. It is built based on a Jekyll theme version of HTML5 UP&#39;s sleek, responsive site template Prologue." />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/assets/js/skel.min.js" defer></script>
+  <script src="/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/assets/js/main.js" defer></script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Nav -->
+<nav id="nav">
+  <ul></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="https://twitter.com/slavipande" class="icon-b fa-twitter"><span class="label">Twitter</span></a></li><li><a href="https://www.linkedin.com/in/svetoslav-pandeliev/" class="icon-b fa-linkedin-in"><span class="label">LinkedIn</span></a></li><li><a href="https://github.com/slavipande" class="icon-b fa-github"><span class="label">GitHub</span></a></li><li><a href="mailto:slavipande@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+	<!-- Page -->
+	<article class="shade-two">
+	  <div class="container">
+			<header>
+				<h2>Enable Blogging in MkDocs</h2></header><p><img src="/assets/images/undraw_Blogging_re_kl0d.png" alt="Enable Blogging Illustration" /></p>
+
+<h3 id="context">Context</h3>
+<p><a href="https://www.dirigible.io/">Eclipse Dirigible</a> is an application development platform that leverages in-system programming and rapid application development techniques to support a complete app development lifecycle. I’ve supported the project for around 18 months, contributing and editing content in the <a href="https://www.dirigible.io/help/">Eclipse Dirigible Documentation</a>, adjusting documentation structure, updating screenshots, reviewing UI strings, writing blogs, testing code samples, and updating the documentation homepage’s look and feel.</p>
+
+<p>Although initially built with <a href="https://jekyllrb.com/">Jekyll</a>, at one point the team decided to move the project’s main website (<a href="https://www.dirigible.io/">https://www.dirigible.io/</a>), including <a href="https://www.dirigible.io/help/">documentation</a>, <a href="https://www.dirigible.io/blogs/">blogs</a>, and other subdomains to <a href="https://www.mkdocs.org/">MkDocs</a> with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.</p>
+
+<h3 id="my-role">My role</h3>
+
+<p>At this point, Material for MkDocs did not support blogging capabilities out-of-the-box. While exploring the Material for MkDocs’ site, I saw a page that included author’s name and avatar, publish date, and reading time at the top, much like a blog.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/images/blog-screenshot.png" alt="Blog Screenshot" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Screenshot from October 11, 2021</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I suggested to the team that we try to replicate this for the <a href="https://www.dirigible.io/blogs/">Eclipse Dirigible Blogs</a> site.
+I opened a <a href="https://github.com/squidfunk/mkdocs-material/discussions/3101">discussion</a> in the <a href="https://github.com/squidfunk/mkdocs-material/discussions">Material for MkDocs repo</a>. The maintainer, <a href="https://github.com/squidfunk">Martin Donath</a>, responded right away that this was an all-manual process involving just HTML + CSS and also provided the raw code of his own implementation.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/images/original-md.png" alt="Original Markdown" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Screenshot from November 1, 2021</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Copy-pasting this in a dirigible blog and replacing the values as needed (and adapting the corresponding CSS, of course) provided the expected result:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/images/blog-dirigible-screenshot.png" alt="Blog Dirigible Screenshot" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Screenshot from October 15, 2021</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>However, this meant that each author had to manually paste a block of HTML in their markdown file each time they write a new blog post. This was not the best approach for us and we wanted to have the blogging capabilities enabled if relevant metadata is provided in the markdown source.</p>
+
+<p>Hence, I started looking into the documentation for possible solutions.
+In <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data">Meta-Data</a>, I saw that the values of any metadata keys-value pairings can be displayed on the page or used to control the page rendering. In addition, I learned from <a href="https://squidfunk.github.io/mkdocs-material/reference/#using-metadata-in-templates">Using metadata in templates</a> and <a href="https://squidfunk.github.io/mkdocs-material/customization/#overriding-blocks">Overriding blocks</a> that there are different blocks in the page template files that can be extended and overwritten. For this purpose, I did the following:</p>
+
+<ul>
+  <li>Found that the <code class="language-plaintext highlighter-rouge">content</code> block is the part of the HTML template responsible for the page content.</li>
+  <li>
+    <p>Followed the instructions to override the <code class="language-plaintext highlighter-rouge">content</code> block and pasted the blogging-capabilities HTML code in it. This way I created a customized <code class="language-plaintext highlighter-rouge">main.html</code> that had a <code class="language-plaintext highlighter-rouge">content</code> block overriding the default one. However, the values in it were still hardcoded. We had to replace all hardcoded values in the current <code class="language-plaintext highlighter-rouge">content</code> block in <code class="language-plaintext highlighter-rouge">main.html</code> so that for each particular page the values should be populated from the metadata - <code class="language-plaintext highlighter-rouge">author</code>, <code class="language-plaintext highlighter-rouge">author_gh_user</code>, <code class="language-plaintext highlighter-rouge">read_time</code>, <code class="language-plaintext highlighter-rouge">publish_date</code>.</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="s">---</span>
+  <span class="s">title</span><span class="pi">:</span> <span class="s">Enable Blogging Capabilities with Material for MkDocs</span>
+  <span class="na">description</span><span class="pi">:</span> <span class="s">In this article we are going to ...</span>
+  <span class="na">author</span><span class="pi">:</span> <span class="s">Svetoslav Pandeliev</span>
+  <span class="na">author_gh_user</span><span class="pi">:</span> <span class="s">slavipande</span>
+  <span class="na">read_time</span><span class="pi">:</span> <span class="s">10 min</span>
+  <span class="na">publish_date</span><span class="pi">:</span> <span class="s">November 2, </span><span class="m">2021</span>
+  <span class="s">---</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Armed with my observations, I set up a call with the dev colleagues and explained what changes we had to make. Thanks to the conditional syntax in the template files, we were able to extend the <code class="language-plaintext highlighter-rouge">main.html</code> with an additional <code class="language-plaintext highlighter-rouge">content</code> block that’s only included if a value is provided for <code class="language-plaintext highlighter-rouge">author_gh_user</code> in the metadata of the source file.</p>
+
+    <p><img src="/assets/images/blog-html.png" alt="Blog HMTL" /></p>
+  </li>
+  <li>Added a <a href="https://www.dirigible.io/help/community/#blogs">Blogs</a> section to the <a href="https://www.dirigible.io/help/community/">Community</a> page with instructions for authors on how to enable the blogging capabilities when writing a blog.</li>
+</ul>
+
+<h3 id="enable-blogging-capabilities-with-material-for-mkdocs"><a href="https://www.dirigible.io/blogs/2021/11/2/material-blogging-capabilities/">Enable Blogging Capabilities with Material for MkDocs</a></h3>
+<p>I also wrote a blog post that explains all this in detail and provides code samples, too. Follow the link above to check it out.</p>
+
+<h3 id="tools">Tools</h3>
+
+<ul>
+  <li>VS Code</li>
+  <li>Bash</li>
+  <li>Git and GitHub</li>
+  <li>Snagit</li>
+  <li>MkDocs and Material for MkDocs</li>
+  <li><a href="https://www.w3schools.com/">W3schools</a> for learning HTML/CSS and trying out things on the go</li>
+</ul>
+
+<h3 id="update">Update</h3>
+<p>Recently, Material for MkDocs received a blog-support update. You can learn more about it in <a href="https://squidfunk.github.io/mkdocs-material/blog/2022/09/12/blog-support-just-landed/">Blog support just landed</a>.</p>
+</div>
+	</article>
+</div><!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy;Svetoslav Pandeliev. All rights reserved.</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://github.com/chrisbobbe">Chris Bobbe</a></li>
+    <li>Photo by <a href="https://unsplash.com/@fantasyflip?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Philipp Katzenberger</a> on <a href="https://unsplash.com/s/photos/tech?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+    <li>Illustrations by <a href="https://undraw.co/">unDraw</a></li>
+  
+  </ul>
+  
+</div></body>
+</html>
