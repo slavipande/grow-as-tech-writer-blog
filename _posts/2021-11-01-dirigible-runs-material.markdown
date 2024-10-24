@@ -4,6 +4,7 @@ title:  "Dirigible now runs Material for MkDocs"
 date:   2021-11-01 10:41:08 +0300
 categories: dirigible
 author: Svetoslav Pandeliev
+author_linkedin_user: svetoslav-pandeliev
 icon: fa-check
 hide: true
 ---

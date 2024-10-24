@@ -3,6 +3,8 @@ layout: post
 title:  "Enable Blogging Capabilities with Material for MkDocs"
 date:   2021-11-02 10:41:08 +0300
 categories: dirigible
+author: Svetoslav Pandeliev
+author_linkedin_user: svetoslav-pandeliev
 icon: fa-check
 hide: true
 ---

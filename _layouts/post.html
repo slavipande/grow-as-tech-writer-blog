@@ -10,7 +10,11 @@ layout: default
 	  <div class="container">
 			<header>
 				<h2>{{- page.title -}}</h2>
-				<p>{% if page.author %}{{ page.author }}, {% endif %}{{- page.date | date_to_long_string -}}</p>
+				<p>{% if page.author %}
+					 <a href="https://linkedin.com/in/{{ page.author_linkedin_user }}">{{ page.author }}</a>,
+					{% endif %}
+					{{- page.date | date_to_long_string -}}
+				</p>
 			</header>
 	    {{- content -}}
 	  </div>
